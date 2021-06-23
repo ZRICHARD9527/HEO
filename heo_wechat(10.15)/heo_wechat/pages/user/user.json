@@ -1,0 +1,13 @@
+{
+  "navigationBarTitleText": "HEO校园互帮 - 我",
+  "usingComponents": {
+    "wux-media": "/wux/media/index",
+    "wux-button": "/wux/button/index",
+    "wux-cell-group": "/wux/cell-group/index",
+    "wux-cell": "/wux/cell/index",
+    "wux-grids": "/wux/grids/index",
+    "wux-grid": "/wux/grid/index",
+    "wux-icon": "/wux/icon/index",
+    "wux-rater": "/wux/rater/index"
+}
+}

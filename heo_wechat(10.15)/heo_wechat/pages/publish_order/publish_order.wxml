@@ -1,0 +1,51 @@
+<wux-toptips id="wux-toptips" />
+<view>
+
+	<wux-cell-group title="订单基本信息">
+		<wux-cell hover-class="none">
+			<wux-field name="input">
+				<wux-input maxlength="6" label="订单标题" placeholder="输入3-6个字的标题" bind:change="onChangeTitle">
+				</wux-input>
+			</wux-field>
+		</wux-cell>
+
+		<wux-popup-select value="{{ type_value }}" options="{{ types_array }}" data-index="1" bind:confirm="onConfirmType" bind:valueChange="onValueChangeType">
+			<wux-cell title="订单类型" is-link extra="{{ type_des }}"></wux-cell>
+		</wux-popup-select>
+
+		<wux-cell hover-class="none">
+			<wux-field name="textarea">
+				<wux-textarea maxlength="100" hasCount label="详细描述" rows="3" placeholder="输入小于100个字的描述" bind:change="onChangeDetail" />
+			</wux-field>
+		</wux-cell>
+
+		<wux-upload header="{{header}}" listType="picture-card" defaultFileList="{{ fileList }}" max="4" url="https://clbb.looyeagee.cn/action/uploadPic" bind:preview="onPreviewFile" bind:success="onSuccessFile" bind:change="onChangeFile"  bind:complete="onCompleteFile" bind:fail="onFailFile" bind:progress="onProgressFile" count="1" >
+			<text>上传图片</text>
+		</wux-upload>
+
+		<wux-cell hover-class="none">
+			<wux-field name="textarea">
+				<wux-textarea maxlength="100" hasCount label="机密信息" rows="3" placeholder="(可选)输入被接单才能看到的机密信息如取货码等" bind:change="onChangeSecret" />
+			</wux-field>
+		</wux-cell>
+
+		<wux-date-picker mode="datetime" value="{{ dateArray }}" lang="{{ lang }}" data-index="1" data-mode="datetime" bind:confirm="onConfirmDate" minDate="{{minDate}}" maxDate="{{maxDate}}">
+			<wux-cell title="截止接单时间" is-link extra="{{ endDate }}"></wux-cell>
+		</wux-date-picker>
+
+
+		<wux-cell title="接单后限制几小时内完成" hover-class="none">
+			<wux-input-number disabled="{{ false }}" longpress controlled step="{{ 2 }}" slot="footer" defaultValue="12" min="1" max="72" value="{{limitHour}}" bind:change="onChangeLimitHour" bind:blur="blurLimitHour" />
+		</wux-cell>
+
+		<wux-cell title="金额设置(元)" hover-class="none">
+			<wux-input-number disabled="{{ false }}" longpress controlled step="{{ 0.5 }}" slot="footer" defaultValue="2" min="0.5" max="100" value="{{money}}" bind:change="onChangeMoney" bind:blur="blurMoney" />
+		</wux-cell>
+
+
+
+	</wux-cell-group>
+	<view class="btn-area">
+		<wux-button block type="calm" bind:click="submit">提交订单</wux-button>
+	</view>
+</view>

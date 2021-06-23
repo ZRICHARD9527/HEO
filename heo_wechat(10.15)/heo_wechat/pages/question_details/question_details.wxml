@@ -1,0 +1,93 @@
+<view class="cu-card dynamic">
+  <view class="cu-item shadow">
+    <view bindlongpress='longPressQuestion'>
+    <view class="cu-list menu-avatar">
+      <view class="cu-item">
+        <view class="cu-avatar round lg" style="background-image:url({{question.img}});"></view>
+        <view class="content flex-sub">
+          <view>{{question.user_name}}</view>
+          <view class="text-gray text-sm flex justify-between">
+            {{question.time}}
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="text-content">
+      {{question.content}}
+    </view>
+    <view class="text-gray text-sm text-right padding">
+      <text class="cuIcon-messagefill margin-lr-xs" bindtap="showModal" data-target="bottomModal" data-type="0"></text>
+    </view>
+  </view>
+    
+    <view class="cu-list menu-avatar comment solids-top" >
+      <view data-id="{{item.pub_id}}" class="cu-item" bindlongtap='longPressAnswer' wx:for="{{yuanAnswer}}">
+        <!-- 没评论的回答 -->
+        <block data-id="{{item.pub_id}}" wx:if="{{item.rpl_id==0 ? true : false}}">
+        <view data-id="{{item.pub_id}}" class="cu-avatar round" style="background-image:url({{item.pub_img}});"></view>
+        <view class="content">
+          <view data-id="{{item.pub_id}}" class="text-grey">{{item.pub_name}}</view>
+          <view data-id="{{item.pub_id}}" class="text-black text-content text-df">
+            {{item.pub_content}}
+          </view>
+          <view data-id="{{item.pub_id}}" class="margin-top-sm flex justify-between">
+            <view data-id="{{item.pub_id}}" class="text-gray text-df">{{item.pub_time}}</view>
+            <view>
+              <text data-id="{{item.pub_id}}" data-reply_id="{{item.pub_id}}" class="cuIcon-messagefill text-gray margin-left-sm" bindtap="showModal" data-target="bottomModal" data-type="1"></text>
+            </view>
+          </view>
+        </view>
+      <!-- </view> -->
+        </block>
+      <!-- 有评论的回答的评论 -->
+      <block wx:else>
+        <view data-id="{{item.pub_id}}" class="cu-avatar round" style="background-image:url({{item.pub_img}});"></view>
+        <view class="content">
+          <view data-id="{{item.pub_id}}" class="text-grey">{{item.pub_name}}</view>
+          <view data-id="{{item.pub_id}}" class="text-black text-content text-df">
+            <text class="text-blue">@{{item.rpl_name}}</text>:{{item.pub_content}}
+          </view>
+          <view data-id="{{item.pub_id}}" class="bg-grey padding-sm radius margin-top-sm  text-sm">
+            <view class="flex">
+              <view data-id="{{item.pub_id}}">{{item.rpl_name}}:</view>
+              <view class="flex-sub" data-id="{{item.pub_id}}">{{item.rpl_content}}</view>
+            </view>
+          </view>
+          <view class="margin-top-sm flex justify-between">
+            <view class="text-gray text-df" data-id="{{item.pub_id}}">{{item.pub_time}}</view>
+            <view>
+              <text data-id="{{item.pub_id}}" data-reply_id="{{item.pub_id}}" class="cuIcon-messagefill text-gray margin-left-sm" bindtap="showModal" data-target="bottomModal" data-type="1"></text>
+            </view>
+          </view>
+        </view>
+      </block>
+      </view>
+    </view>
+  </view>
+  <wux-pagination current="{{ currentPage }}" total="{{ total }}" mode="button" controlled bind:change="onChangePage">
+    <view slot="prev">点我去上一页</view>
+            <view slot="next">点我去下一页</view>
+    </wux-pagination>
+  <!-- 答题弹框 -->
+  <view class="cu-modal bottom-modal {{modalName=='bottomModal'?'show':''}}">
+    <view class="cu-dialog">
+      <view class="cu-bar bg-white justify-center">
+        <!-- <view class="action text-green">确定</view> -->
+        <view class="center" hidden="{{type==1 ? true : false}}">回答</view>
+        <view class="center" hidden="{{type==0 ? true : false}}">评论</view>
+        <!-- <view class="action text-blue" bindtap="hideModal">取消</view> -->
+      </view>
+      <view class="padding-xl text-left">
+      <textarea auto-height bindinput="{{type==0? 'my_Answer':'my_Comment'}}" maxlength="500" placeholder="最大字数为500个" value="{{type==0? answer:comment}}"></textarea>
+      </view>
+
+      <view class="cu-bar bg-white">
+        <view class="action text-green" bindtap="send">确定</view>
+        <view class="action text-blue" bindtap="hideModal">取消</view>
+      </view>
+    </view>
+
+  </view>
+
+  
+</view>

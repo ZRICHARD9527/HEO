@@ -1,0 +1,34 @@
+= 长理帮帮restful API
+
+
+[[_overview]]
+== Overview
+by looyeagee
+
+
+=== Version information
+[%hardbreaks]
+__Version__ : 1.0
+
+
+=== License information
+[%hardbreaks]
+__Terms of service__ : https://looyeagee.cn
+
+
+=== URI scheme
+[%hardbreaks]
+__Host__ : localhost:7877
+__BasePath__ : /
+
+
+=== Tags
+
+* 互帮种类 : Type Controller
+* 用户动作 : Action Controller
+* 用户登录注册查询 : User Controller
+* 订单查询 : Order Controller
+* 问答社区 : Study Controller
+
+
+

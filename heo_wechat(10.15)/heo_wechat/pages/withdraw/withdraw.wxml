@@ -1,0 +1,24 @@
+<!--pages/withdraw/withdraw.wxml-->
+<view class="container">
+  <view class="tixian-bg">
+    <image class="tixian-img" src="../../images/timg3.jpg"></image>
+    <view class="tixian-name">
+      我的余额
+      <text class="money">¥{{userinfo.money}}</text>
+    </view>
+  </view>
+  <form bindsubmit="bindSave">
+    <view class="form-box">
+      <view class="row-wrap">
+        <view class="label">充值金额</view>
+        <view class="label-right">
+          <text class="lable-amount">¥</text>
+          <input name="amount" class="input" type="number" />
+        </view>
+        <view class="lable-text">充值金额一次最多充100元，交易使用余额</view>
+      </view>
+    </view>
+    <button class="save-btn" formType="submit">确认充值</button>
+    <button type="default" class="cancel-btn" bindtap="bindCancel">取消</button>
+  </form>
+</view>

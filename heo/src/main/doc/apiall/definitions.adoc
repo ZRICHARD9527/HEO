@@ -1,0 +1,20 @@
+
+[[_definitions]]
+== Definitions
+
+[[_resultmodel]]
+=== ResultModel
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**data** +
+__optional__|object
+|**errorCode** +
+__optional__|integer (int32)
+|**msg** +
+__optional__|string
+|===
+
+
+

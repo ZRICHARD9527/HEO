@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "HEO校园互帮 - 我的接单",
+  "usingComponents": {
+    "wux-tabs": "/wux/tabs/index",
+    "wux-tab": "/wux/tab/index",
+    "wux-badge": "/wux/badge/index",
+    "wux-card": "/wux/card/index",
+    "wux-wing-blank": "/wux/wing-blank/index"
+  }
+}

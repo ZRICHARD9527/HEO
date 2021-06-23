@@ -1,0 +1,18 @@
+/* pages/questions/questions.wxss */
+.page_center{
+    height: 245px;
+    width: 100%;
+}
+.page_bottem{
+    width: 100%;
+    height: auto;
+}
+.task {
+    position: static;
+    border-style: solid;
+    border-radius: 20rpx;
+    border-width: thin thin thin 23rpx;
+    border-color: #1296db;
+    padding: 12rpx 12rpx;
+    margin: 12rpx;
+}

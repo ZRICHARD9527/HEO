@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--suppress ALL -->
+<mapper namespace="cn.looyeagee.heo.mapper.OrderInfoMapper">
+    <resultMap id="recordsCount" type="integer"/>
+    <resultMap id="baseResultMap" type="java.util.HashMap"/>
+    <select id="findResultByInfo" resultMap="baseResultMap,recordsCount"
+            parameterType="cn.looyeagee.heo.entity.SelectInfo" resultType="java.util.List">
+        SELECT SQL_CALC_FOUND_ROWS
+        `user`.user_name AS publish_user_name,
+        `user`.img ,
+        type.type_name,
+        order_info.*,
+        accept_info.*
+        FROM
+        order_info
+        LEFT JOIN accept_info ON order_info.id = accept_info.order_id
+        LEFT JOIN type ON order_info.type_id = type.id
+        LEFT JOIN `user` ON order_info.user_publish = `user`.id
+        <where>
+            # 默认情况筛选订单结束接单时间大于现在并且没有被接单的
+            end_date &gt;= NOW() AND user_accept IS NULL
+            # 标题模糊搜索
+            <if test="title != null">
+                AND `title` LIKE CONCAT('%',#{title},'%')
+            </if>
+
+            #&gt;=是大于等于
+            <if test="minMoney!=null">
+                AND `order_money` &gt;= #{minMoney}
+            </if>
+
+            # &lt;=是小于等于
+            <if test="maxMoney!=null">
+                AND `order_money` &lt;= #{maxMoney}
+            </if>
+
+            # 类型筛选
+            <if test="type!=null">
+                AND type_id = #{type}
+            </if>
+
+            # 发布者筛选
+            <if test="userPublish!=null">
+                AND user_publish = #{userPublish}
+            </if>
+
+        </where>
+
+        <if test="orderBy!=null and orderBy!=''">
+
+            <if test="highToLow ==null or highToLow ==0">
+                ORDER BY ${orderBy} ASC,order_info.id ASC #加id ASC是为了保证分页结果的唯一性 mysql排序是不稳定的 https://www.jianshu.com/p/1e8a19738ae4
+            </if>
+            <if test="highToLow !=null and highToLow ==1">
+                ORDER BY ${orderBy} DESC,order_info.id ASC
+            </if>
+        </if>
+        #分页查询
+        LIMIT
+        #{pageNumber},#{pageSize};
+        #接着查询符合条件个数
+        SELECT FOUND_ROWS();
+    </select>
+</mapper>
+            

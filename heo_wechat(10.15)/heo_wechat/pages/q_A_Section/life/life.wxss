@@ -1,0 +1,50 @@
+  /*边框*/
+  .task {
+    position: static;
+    border-style: solid;
+    border-radius: 20rpx;
+    border-width: thin thin thin 23rpx;
+    border-color: #1296db;
+    padding: 12rpx 12rpx;
+    margin: 12rpx;
+    
+    }
+    .task-title {
+      color: black;
+      text-align: center;
+      font-size: 200%;
+      font-weight: bold;
+      /* display: inline; */
+      }
+  
+    /*大字体*/
+    
+    .task-type {
+    vertical-align: middle;
+    color:black;
+    font-size: 100%;
+    font-weight: lighter;
+    display: inline;
+    }
+    
+    .task-description {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    }
+    
+    /*头像*/
+    
+    .task-image {
+    float: left;
+    left: -5rpx;
+    top: 5rpx; 
+    bottom: 20rpx;
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+    display: block;
+    }
+    
+    

@@ -1,0 +1,164 @@
+.round-click{
+  height: 100rpx;
+  width: 100rpx;
+  background-color: #1296db;
+  border-radius: 100%;
+  position: fixed;
+  bottom: 50rpx;
+  right: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9;
+  box-shadow:0rpx 5rpx 30rpx #1296DB;
+  line-height: 32rpx;
+}
+.round-click navigator{
+  font-size: 30rpx;
+  max-width: 80rpx;
+  color: #fff;
+  text-align: center;
+}
+.swiper_container {
+margin-top: 20rpx;
+height: 55rpx;
+width: 100%;
+background-color: white;
+}
+
+.swiper_item {
+margin-top: 10rpx;
+font-size: 25rpx;
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+letter-spacing: 2px;
+}
+.announcement {
+  color: #a0a0a0;
+  background: #fff0e3;
+  border-radius: 6rpx;
+  line-height: 66rpx;
+  height: 66rpx;
+}
+.announcement-context {
+  width: 580rpx;
+  /* 偏移出文本框的内容隐藏掉 */
+  overflow: hidden;
+}
+.announcement-text {
+  width: 570rpx;
+  /* 文字内容只做一行显示 */
+  white-space: nowrap;
+}
+
+/*边框*/
+.task {
+position: static;
+border-style: solid;
+border-radius: 20rpx;
+border-width: thin thin thin 23rpx;
+border-color: #1296db;
+padding: 12rpx 12rpx;
+margin: 12rpx;
+
+}
+
+/*大字体*/
+
+.task-type {
+vertical-align: middle;
+color: #1296db;
+font-size: 100%;
+font-weight: lighter;
+display: inline;
+}
+
+/*日期字体*/
+
+.task-date {
+text-align: right;
+vertical-align: middle;
+color: #000;
+font-size: 100%;
+font-weight: lighter;
+float: right;
+}
+
+.task-description {
+display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 2;
+overflow: hidden;
+}
+
+/*头像*/
+
+.task-image {
+float: left;
+left: -5rpx;
+top: 10rpx;
+bottom: 20rpx;
+width: 100rpx;
+height: 100rpx;
+border-radius: 50%;
+display: block;
+}
+
+/*按钮*/
+
+.task-button {
+background-color: #1296db;
+border: none;
+font-size: 30rpx;
+color: #fff;
+width: 10rpx;
+text-align: center;
+text-decoration: none;
+overflow: hidden;
+cursor: pointer;
+float:right;
+}
+
+
+
+.weui-tab__content {
+padding-top: 60px;
+text-align: center;
+}
+
+.swiper image {
+width: 100%;
+height: auto;
+}
+
+.header {
+margin: 90rpx 0 90rpx 50rpx;
+border-bottom: 1px solid #ccc;
+text-align: center;
+width: 650rpx;
+height: 300rpx;
+line-height: 450rpx;
+}
+
+.header image {
+width: 200rpx;
+height: 200rpx;
+}
+
+.content {
+margin-left: 50rpx;
+margin-bottom: 90rpx;
+}
+
+.content text {
+display: block;
+color: #9d9d9d;
+margin-top: 40rpx;
+}
+
+.bottom {
+border-radius: 80rpx;
+margin: 70rpx 50rpx;
+font-size: 35rpx;
+}

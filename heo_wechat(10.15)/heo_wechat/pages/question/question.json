@@ -1,0 +1,18 @@
+{
+  "usingComponents": {
+    "wux-picker": "/wux/picker/index",
+    "wux-row": "/wux/row/index",
+    "wux-col": "/wux/col/index",
+    "wux-search-bar": "/wux/search-bar/index",
+    "wux-filterbar": "/wux/filterbar/index",
+    "wux-icon": "/wux/icon/index",
+    "wux-button": "/wux/button/index",
+    "wux-cell-group": "/wux/cell-group/index",
+    "wux-cell": "/wux/cell/index",
+    "wux-cascader": "/wux/cascader/index",
+    "wux-toast": "/wux/toast/index",
+    "wux-fab-button": "/wux/fab-button/index",
+    "wux-dialog": "/wux/dialog/index",
+    "wux-pagination": "/wux/pagination/index"
+  }
+}

@@ -1,0 +1,14 @@
+<!--pages/user/user.wxml-->
+<view>
+<wux-media thumb="{{userinfo.img}}" thumb-style="border-radius: 50%" title="{{userinfo.userName}}" label="加入时间:{{userinfo.regDate}}"></wux-media>
+<wux-button block size="large" type="calm" bindtap="gotowithdraw">余额:{{userinfo.money}}(点击充值)</wux-button>
+<wux-cell-group>
+ <wux-cell title="评分" hover-class="none">
+         <wux-icon wux-class="icon" slot="header" type="ios-star" size="22" />
+                <wux-rater slot="footer" default-value="{{ 5 }}" active-color="#1296DB" />
+            </wux-cell>
+    <wux-cell title="联系客服" is-link open-type="contact">
+        <wux-icon wux-class="icon" slot="header" type="ios-share-alt" size="22" />
+    </wux-cell>
+</wux-cell-group>
+</view>

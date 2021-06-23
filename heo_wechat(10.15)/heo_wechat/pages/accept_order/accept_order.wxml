@@ -1,0 +1,65 @@
+  <wux-dialog id="wux-dialog" />
+  <view class='swiper' wx:if="{{order_info.pic_url.length!=0}}">
+  	<swiper style='height:500rpx' indicator-dots="{{true}}" autoplay="{{true}}" circular="{{false}}" vertical="{{false}}" interval="{{3000}}" duration="{{1000}}" previous-margin="0px" next-margin="0px">
+  		<block wx:for='{{order_info.pic_url}}' wx:key="{{index}}">
+  			<swiper-item>
+  				<image src="{{item}}" style="height:500rpx;width:100vw;" data-id='{{index}}' class="slide-image" mode="aspectFit" />
+  			</swiper-item>
+  		</block>
+  	</swiper>
+  </view>
+
+
+  <wux-cell-group title="订单基本信息">
+  	<wux-cell>
+  		<text>订单标题:{{order_info.title}}</text>
+  	</wux-cell>
+  	<wux-cell wx:if="{{order_info.publish_user_name}}">
+  		<text>发布者:{{order_info.publish_user_name}}</text>
+  	</wux-cell>
+  	<wux-cell wx:if="{{order_info.accept_user_name}}">
+  		<text>接单者:{{order_info.accept_user_name}}</text>
+  	</wux-cell>
+  	<wux-cell>
+  		<text>订单类型:{{order_info.type_name}}</text>
+  	</wux-cell>
+  	<wux-cell>
+  		<text>订单金额:{{order_info.order_money}}元</text>
+  	</wux-cell>
+  	<wux-cell>
+  		<text>订单详细:{{order_info.detail}}</text>
+  	</wux-cell>
+  	<wux-cell wx:if="{{order_info.secret}}">
+  		<text>机密信息:{{order_info.secret}}</text>
+  	</wux-cell>
+  	<wux-cell>
+  		<text>订单发布时间:{{order_info.begin_date}}</text>
+  	</wux-cell>
+  	<wux-cell>
+  		<text>截止接单时间:{{order_info.end_date}}</text>
+  	</wux-cell>
+  	<wux-cell>
+  		<text>接单后限时:{{order_info.limit_hour}}小时内完成</text>
+  	</wux-cell>
+  	<wux-cell wx:if="{{order_info.limit_date}}">
+  		<text>截止完成时间:{{order_info.limit_date}}</text>
+  	</wux-cell>
+		  	<wux-cell wx:if="{{order_info.accepter_finish_date}}">
+  		<text>接单者完成时间:{{order_info.accepter_finish_date}}</text>
+  	</wux-cell>
+		  	<wux-cell wx:if="{{order_info.publisher_confirm_date}}">
+  		<text>确认收货时间:{{order_info.publisher_confirm_date}}</text>
+  	</wux-cell>
+  </wux-cell-group>
+  <view class="btn-area">
+	<!-- //0 接单时 1发布者已发布 2 发布者查看被接单 3 发布者查看已完成 4 接收者已接 5 接收者已完成 -->
+  	<wux-button wx:if="{{order_status===0}}" block type="calm" bind:click="submit">接单</wux-button>
+  	<wux-button block type="calm" bind:click="pub_comment_no_reply">评论</wux-button>
+  </view>
+  <wux-cell-group title="评论区域" wx:if="{{comment.length!=0}}">
+  	<wux-wing-blank size="default">
+  		<wux-card data-user_id="{{item.user_id }}" data-comment_id="{{item.commentId }}" wx:for="{{comment}}" title="{{item.pub_user_name}}" extra="{{item.add_date}}" thumb="{{item.img}}" thumb-style="border-radius: 50%;" actions="{{ item.user_id==my_user_id?actions_del:actions_reply }}" bind:action="onAction">
+  			<view slot="body" style="font-size:35rpx;"><text style="color:red" wx:if="{{item.reply_name}}">@{{item.reply_name}} </text>{{item.content}}</view>
+  		</wux-card>
+  	</wux-wing-blank>
+  </wux-cell-group>

@@ -1,0 +1,26 @@
+{
+  "navigationBarTitleText": "发布订单",
+  "usingComponents": {
+      "wux-cell-group": "/wux/cell-group/index",
+      "wux-cell": "/wux/cell/index",
+      "wux-form": "/wux/form/index",
+      "wux-field": "/wux/field/index",
+      "wux-slider": "/wux/slider/index",
+      "wux-rater": "/wux/rater/index",
+      "wux-input-number": "/wux/input-number/index",
+      "wux-textarea": "/wux/textarea/index",
+      "wux-input": "/wux/input/index",
+      "wux-checkbox-group": "/wux/checkbox-group/index",
+      "wux-checkbox": "/wux/checkbox/index",
+      "wux-radio-group": "/wux/radio-group/index",
+      "wux-radio": "/wux/radio/index",
+      "wux-switch": "/wux/switch/index",
+      "wux-picker": "/wux/picker/index",
+      "wux-date-picker": "/wux/date-picker/index",
+      "wux-popup-select": "/wux/popup-select/index",
+      "wux-segmented-control": "/wux/segmented-control/index",
+      "wux-button": "/wux/button/index",
+      "wux-toptips": "/wux/toptips/index",
+      "wux-upload": "/wux/upload/index"
+  }
+}

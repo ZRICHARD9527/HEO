@@ -1,0 +1,29 @@
+<!--pages/my_accept/my_accept.wxml-->
+ <wux-tabs controlled current="{{ current }}" bindchange="onChange">
+    <wux-tab key="tab1">
+        <wux-badge count="0" bindtap="refreshOrder">待完成</wux-badge>
+    </wux-tab>
+    <wux-tab key="tab2">
+        <wux-badge count="0" bindtap="order5">已完成</wux-badge>
+    </wux-tab>
+</wux-tabs>
+<view wx:if="{{current=='tab1'}}">
+        <view wx:for="{{order1_list}}">
+        <wux-wing-blank size="default">
+            <wux-card  data-type="{{4}}" data-order="{{item}}" title="{{item.title}}" data-order_id="{{item.id}}" extra="酬劳：{{item.order_money}}元" thumb="{{item.img}}" actions="{{ daiwancheng }}" bind:action="onAction">
+                <view slot="body">{{item.detail}}</view>
+                <view slot="footer">截止时间:{{item.limit_date}}({{item.rest}})</view>
+            </wux-card>
+        </wux-wing-blank>
+        </view>
+</view>
+<view wx:if="{{current=='tab2'}}">
+        <view wx:for="{{order5_list}}">
+        <wux-wing-blank size="default">
+            <wux-card data-type="{{5}}" data-order="{{item}}" title="{{item.title}}" extra="酬劳:{{item.order_money}}"  thumb="{{item.img}}" actions="{{ yiwancheng }}" bind:action="onAction">
+                <view slot="body">{{item.detail}}</view>
+                <view slot="footer">完成时间:{{item.accepter_finish_date}}({{item.publisher_confirm_date?"已被发布者确认收货":"等待发布者确认收货"}})</view>
+            </wux-card>
+        </wux-wing-blank>
+        </view>
+</view>

@@ -1,0 +1,43 @@
+<!--pages/my_order/my_order.wxml-->
+        <wux-tabs controlled current="{{ current }}" bindchange="onChange">
+            <wux-tab key="tab1">
+                <wux-badge count="0" bindtap = "refreshOrder">已发布</wux-badge>
+            </wux-tab>
+            <wux-tab key="tab2">
+                <wux-badge count="0" bindtap="order2">被接单</wux-badge>
+            </wux-tab>
+            <wux-tab key="tab3">
+                <wux-badge count="0" bindtap="order3">已完成</wux-badge>
+            </wux-tab>
+        </wux-tabs>
+
+<view wx:if="{{current=='tab1'}}">
+        <view wx:for="{{order1_list}}">
+        <wux-wing-blank size="default">
+            <wux-card data-type="{{1}}" data-order="{{item}}" data-order_id="{{item.id}}"  title="{{item.title}}" extra="酬劳：{{item.order_money}}元" thumb="{{item.img}}" actions="{{ actions }}" bind:action="onAction">
+                <view slot="body">{{item.detail}}</view>
+                <view slot="footer">截止时间:{{item.end_date}}({{item.rest}})</view>
+            </wux-card>
+        </wux-wing-blank>
+        </view>
+</view>
+<view wx:if="{{current=='tab2'}}">
+        <view wx:for="{{order2_list}}">
+        <wux-wing-blank size="default">
+            <wux-card data-type="{{2}}" data-order="{{item}}" title="{{item.title}}" extra="酬劳:{{item.order_money}}" thumb="{{item.img}}" actions="{{ beijiedan }}" bind:action="onAction">
+                <view slot="body">{{item.detail}}</view>
+                <view slot="footer">截止时间:{{item.limit_date}}({{item.rest}})</view>
+            </wux-card>
+        </wux-wing-blank>
+        </view>
+</view>
+<view wx:if="{{current=='tab3'}}">
+        <view wx:for="{{order3_list}}">
+        <wux-wing-blank size="default">
+            <wux-card data-type="{{3}}" data-order="{{item}}" title="{{item.title}}" extra="酬劳:{{item.order_money}}" thumb="{{item.img}}" actions="{{item.publisher_confirm_date?yiwancheng2:yiwancheng1}}" bind:action="onAction2">
+                <view slot="body">{{item.detail}}</view>
+                <view slot="footer">完成时间:{{item.accepter_finish_date}}</view>
+            </wux-card>
+        </wux-wing-blank>
+        </view>
+</view>

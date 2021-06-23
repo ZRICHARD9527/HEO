@@ -1,0 +1,29 @@
+<view class="cu-card dynamic">
+  <view class="task-title">
+    欢迎来到技能模块!
+  </view>
+  <view class="cu-item shadow" bindtap="todetail" wx:for="{{abilityList}}" wx:for-index="id">
+    <view class="cu-list menu-avatar" id="{{id}}">
+      <view class="cu-item" id="{{id}}">
+        <view id="{{id}}" class="cu-avatar round lg" style="background-image:url({{item.img}});"></view>
+        <view class="content flex-sub" id="{{id}}">
+          <view id="{{id}}">{{item.user_name}}</view>
+          <view id="{{id}}"class="text-gray text-sm flex justify-between">
+            {{item.time}}
+          </view>
+        </view>
+      </view>
+    </view>
+    <view id="{{id}}" class="text-content">
+      {{item.content}}
+    </view>  
+    
+  </view>
+  <view class="cu-list menu-avatar comment solids-top">
+    <wux-pagination current="{{ currentPage }}" total="{{ total }}" mode="button" controlled bind:change="onChangePage">      
+    <view slot="prev">点我去上一页</view>
+            <view slot="next">点我去下一页</view>
+    </wux-pagination>
+  </view>
+  
+</view>

@@ -1,0 +1,35 @@
+<wux-fab-button position="bottomRight" theme="calm" direction="vertical" buttons="{{ buttons }}" bind:click="fab_onClick" />
+
+<view>
+<wux-row>
+      <wux-col span="4">
+        <wux-button block size="small" clear type="dark" bind:click="onOpenSortMoney">{{sort_money_desc}}</wux-button>
+      </wux-col>
+
+      <wux-col span="4">
+       <picker bindchange="bindPickerChange" value="{{type_index}}" range="{{type_array}}" range-key="{{'typeName'}}">
+      <wux-button block size="small" clear type="dark">{{type_desc}}</wux-button>
+        </picker>
+      </wux-col>
+
+      <wux-col span="4">
+        <wux-button block size="small" clear type="dark" bind:click="del_all">清除筛选或刷新</wux-button>
+      </wux-col>
+    
+    </wux-row>
+  <view class="task" wx:for="{{order_list}}">
+    <view class="task-type">[{{item.type_name}}]{{item.title}}</view>
+    <view class="task-date">{{item.rest}}</view>
+    <view>
+      <image class="task-image" src="{{item.img}}" />
+      <view class="task-description">{{item.detail}}</view>
+      <button class="task-button" data-index="{{index}}" bindtap="acceptOrder">{{item.order_money}}元 | {{item.limit_hour}}h内完成</button>
+      <view style='clear:both'></view>
+    </view>
+  </view>
+  <wux-pagination current="{{ current }}" total="{{ total }}" mode="button" controlled bind:change="onChangePage">
+            <view slot="prev">点我去上一页</view>
+            <view slot="next">点我去下一页</view>
+        </wux-pagination>
+  <wux-button block type="calm" bind:click="toIndex0">返回主页面</wux-button>
+</view>

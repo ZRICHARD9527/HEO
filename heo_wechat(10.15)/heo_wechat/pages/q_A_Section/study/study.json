@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "wux-pagination": "/wux/pagination/index"
+
+  }
+}

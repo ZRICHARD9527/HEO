@@ -1,0 +1,55 @@
+{
+  "pages": [
+    "pages/index0/index0",         
+    "pages/index/index",
+    "pages/question/question",
+    "pages/logs/logs",
+    "pages/user/user",
+    "pages/need_info/need_info",
+    "pages/my_order/my_order",
+    "pages/my_accept/my_accept",
+    "pages/publish_order/publish_order",
+    "pages/real_name/real_name",
+    "pages/withdraw/withdraw",
+    "pages/accept_order/accept_order",
+    
+    "pages/addquestion/addquestion",
+    "pages/question_details/question_details",
+    "pages/search_result/search result",
+    "pages/q_A_Section/study/study",
+    "pages/q_A_Section/life/life",
+    "pages/q_A_Section/activity/activity",
+    "pages/q_A_Section/ability/ability"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "HEO",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "selectedColor": "#1296DB",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/home_.png",
+        "selectedIconPath": "images/home.png"
+      },
+      {
+        "pagePath": "pages/my_order/my_order",
+        "text": "我的发布",
+        "iconPath": "images/pub_.png",
+        "selectedIconPath": "images/pub.png"
+      },
+      {
+        "pagePath": "pages/my_accept/my_accept",
+        "text": "我的接单",
+        "iconPath": "images/accept_.png",
+        "selectedIconPath": "images/accept.png"
+      }
+    ]
+  }
+}

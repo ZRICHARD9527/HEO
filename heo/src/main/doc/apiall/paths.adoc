@@ -1,0 +1,1058 @@
+
+[[_paths]]
+== Resources
+
+[[_0b357eaebfd210d56b3122f026ba80b3]]
+=== 互帮种类
+Type Controller
+
+
+[[_getalltypeusingget]]
+==== getAllType
+....
+GET /type/all
+....
+
+
+===== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4,.^2"]
+|===
+|Type|Name|Description|Schema|Default
+|**Header**|**jwt** +
+__optional__|令牌|string|`"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxIiwiaWF0IjoxNTkxMDczOTE0LCJzdWIiOiJvRUFmNzRoX0R5VWh0THNseGFUZ0RTRVRnR2dVIiwiZXhwIjoxNTkxNjc4NzE0fQ.5UEkNWptscuIyq2eS0Y5K0o2ZZLQyWEYKKHcLkDt42Q"`
+|===
+
+
+===== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_resultmodel,ResultModel>>
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+===== Produces
+
+* `*/*`
+
+
+[[_c511cc1ce28179005fb21abd8dab7709]]
+=== 用户动作
+Action Controller
+
+
+[[_acceptorderusingget]]
+==== 用户接单
+....
+GET /action/acceptOrder/{orderId}
+....
+
+
+===== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4,.^2"]
+|===
+|Type|Name|Description|Schema|Default
+|**Header**|**jwt** +
+__optional__|令牌|string|`"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxIiwiaWF0IjoxNTkxMDczOTE0LCJzdWIiOiJvRUFmNzRoX0R5VWh0THNseGFUZ0RTRVRnR2dVIiwiZXhwIjoxNTkxNjc4NzE0fQ.5UEkNWptscuIyq2eS0Y5K0o2ZZLQyWEYKKHcLkDt42Q"`
+|**Path**|**orderId** +
+__required__|订单id|integer (int32)|
+|===
+
+
+===== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_resultmodel,ResultModel>>
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+===== Produces
+
+* `*/*`
+
+
+[[_cancelorderusingget]]
+==== 发布者取消订单
+....
+GET /action/cancelOrder/{orderId}
+....
+
+
+===== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4,.^2"]
+|===
+|Type|Name|Description|Schema|Default
+|**Header**|**jwt** +
+__optional__|令牌|string|`"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxIiwiaWF0IjoxNTkxMDczOTE0LCJzdWIiOiJvRUFmNzRoX0R5VWh0THNseGFUZ0RTRVRnR2dVIiwiZXhwIjoxNTkxNjc4NzE0fQ.5UEkNWptscuIyq2eS0Y5K0o2ZZLQyWEYKKHcLkDt42Q"`
+|**Path**|**orderId** +
+__required__|订单id|integer (int32)|
+|===
+
+
+===== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_resultmodel,ResultModel>>
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+===== Produces
+
+* `*/*`
+
+
+[[_delcommentusingdelete]]
+==== 删评论
+....
+DELETE /action/comment/{commentId}
+....
+
+
+===== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4,.^2"]
+|===
+|Type|Name|Description|Schema|Default
+|**Header**|**jwt** +
+__optional__|令牌|string|`"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxIiwiaWF0IjoxNTkxMDczOTE0LCJzdWIiOiJvRUFmNzRoX0R5VWh0THNseGFUZ0RTRVRnR2dVIiwiZXhwIjoxNTkxNjc4NzE0fQ.5UEkNWptscuIyq2eS0Y5K0o2ZZLQyWEYKKHcLkDt42Q"`
+|**Path**|**commentId** +
+__required__|commentId|integer (int32)|
+|===
+
+
+===== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_resultmodel,ResultModel>>
+|**204**|No Content|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|===
+
+
+===== Produces
+
+* `*/*`
+
+
+[[_commentusingpost]]
+==== 发评论
+....
+POST /action/comment/{order_id}
+....
+
+
+===== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4,.^2"]
+|===
+|Type|Name|Description|Schema|Default
+|**Header**|**jwt** +
+__optional__|令牌|string|`"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxIiwiaWF0IjoxNTkxMDczOTE0LCJzdWIiOiJvRUFmNzRoX0R5VWh0THNseGFUZ0RTRVRnR2dVIiwiZXhwIjoxNTkxNjc4NzE0fQ.5UEkNWptscuIyq2eS0Y5K0o2ZZLQyWEYKKHcLkDt42Q"`
+|**Path**|**order_id** +
+__required__|order_id|integer (int32)|
+|**Query**|**content** +
+__required__|content|string|
+|**Query**|**reply** +
+__optional__|回复谁|integer (int32)|
+|===
+
+
+===== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_resultmodel,ResultModel>>
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+===== Consumes
+
+* `application/json`
+
+
+===== Produces
+
+* `*/*`
+
+
+[[_findcommentusingget]]
+==== 找评论
+....
+GET /action/comment/{order_id}
+....
+
+
+===== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4,.^2"]
+|===
+|Type|Name|Description|Schema|Default
+|**Header**|**jwt** +
+__optional__|令牌|string|`"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxIiwiaWF0IjoxNTkxMDczOTE0LCJzdWIiOiJvRUFmNzRoX0R5VWh0THNseGFUZ0RTRVRnR2dVIiwiZXhwIjoxNTkxNjc4NzE0fQ.5UEkNWptscuIyq2eS0Y5K0o2ZZLQyWEYKKHcLkDt42Q"`
+|**Path**|**order_id** +
+__required__|order_id|integer (int32)|
+|===
+
+
+===== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_resultmodel,ResultModel>>
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+===== Produces
+
+* `*/*`
+
+
+[[_finalfinishorderusingget]]
+==== 发布者确认完成订单
+....
+GET /action/confirmOrder/{orderId}
+....
+
+
+===== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4,.^2"]
+|===
+|Type|Name|Description|Schema|Default
+|**Header**|**jwt** +
+__optional__|令牌|string|`"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxIiwiaWF0IjoxNTkxMDczOTE0LCJzdWIiOiJvRUFmNzRoX0R5VWh0THNseGFUZ0RTRVRnR2dVIiwiZXhwIjoxNTkxNjc4NzE0fQ.5UEkNWptscuIyq2eS0Y5K0o2ZZLQyWEYKKHcLkDt42Q"`
+|**Path**|**orderId** +
+__required__|订单id|integer (int32)|
+|===
+
+
+===== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_resultmodel,ResultModel>>
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+===== Produces
+
+* `*/*`
+
+
+[[_finishorderusingget]]
+==== 用户完成订单
+....
+GET /action/finishOrder/{orderId}
+....
+
+
+===== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4,.^2"]
+|===
+|Type|Name|Description|Schema|Default
+|**Header**|**jwt** +
+__optional__|令牌|string|`"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxIiwiaWF0IjoxNTkxMDczOTE0LCJzdWIiOiJvRUFmNzRoX0R5VWh0THNseGFUZ0RTRVRnR2dVIiwiZXhwIjoxNTkxNjc4NzE0fQ.5UEkNWptscuIyq2eS0Y5K0o2ZZLQyWEYKKHcLkDt42Q"`
+|**Path**|**orderId** +
+__required__|订单id|integer (int32)|
+|===
+
+
+===== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_resultmodel,ResultModel>>
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+===== Produces
+
+* `*/*`
+
+
+[[_getsecretusingget]]
+==== 获取隐私信息
+....
+GET /action/getSecret/{orderId}
+....
+
+
+===== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4,.^2"]
+|===
+|Type|Name|Description|Schema|Default
+|**Header**|**jwt** +
+__optional__|令牌|string|`"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxIiwiaWF0IjoxNTkxMDczOTE0LCJzdWIiOiJvRUFmNzRoX0R5VWh0THNseGFUZ0RTRVRnR2dVIiwiZXhwIjoxNTkxNjc4NzE0fQ.5UEkNWptscuIyq2eS0Y5K0o2ZZLQyWEYKKHcLkDt42Q"`
+|**Path**|**orderId** +
+__required__|订单id|integer (int32)|
+|===
+
+
+===== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_resultmodel,ResultModel>>
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+===== Produces
+
+* `*/*`
+
+
+[[_submitorderusingpost]]
+==== 发布订单
+....
+POST /action/submitOrder
+....
+
+
+===== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4,.^2"]
+|===
+|Type|Name|Description|Schema|Default
+|**Header**|**jwt** +
+__optional__|令牌|string|`"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxIiwiaWF0IjoxNTkxMDczOTE0LCJzdWIiOiJvRUFmNzRoX0R5VWh0THNseGFUZ0RTRVRnR2dVIiwiZXhwIjoxNTkxNjc4NzE0fQ.5UEkNWptscuIyq2eS0Y5K0o2ZZLQyWEYKKHcLkDt42Q"`
+|**Query**|**detail** +
+__required__|订单详情|string|
+|**Query**|**endDate** +
+__required__|停止接单时间|string (date-time)|
+|**Query**|**limitHour** +
+__required__|接单后限制时间|integer (int32)|
+|**Query**|**orderMoney** +
+__required__|积分设置|number|
+|**Query**|**picUrl** +
+__optional__|图片url|string|
+|**Query**|**secret** +
+__optional__|订单隐私信息|string|
+|**Query**|**title** +
+__required__|订单标题|string|
+|**Query**|**typeId** +
+__required__|订单类型|integer (int32)|
+|===
+
+
+===== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_resultmodel,ResultModel>>
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+===== Consumes
+
+* `application/json`
+
+
+===== Produces
+
+* `*/*`
+
+
+[[_uploadusingpost]]
+==== 上传图片到OSS
+....
+POST /action/uploadPic
+....
+
+
+===== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4,.^2"]
+|===
+|Type|Name|Description|Schema|Default
+|**Header**|**jwt** +
+__optional__|令牌|string|`"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxIiwiaWF0IjoxNTkxMDczOTE0LCJzdWIiOiJvRUFmNzRoX0R5VWh0THNseGFUZ0RTRVRnR2dVIiwiZXhwIjoxNTkxNjc4NzE0fQ.5UEkNWptscuIyq2eS0Y5K0o2ZZLQyWEYKKHcLkDt42Q"`
+|**FormData**|**file** +
+__required__|图片|file|
+|===
+
+
+===== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_resultmodel,ResultModel>>
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+===== Consumes
+
+* `multipart/form-data`
+
+
+===== Produces
+
+* `*/*`
+
+
+[[_f8b73422d6a366d39a992b9fac77badb]]
+=== 用户登录注册查询
+User Controller
+
+
+[[_getmyselfusingget]]
+==== 查询自己信息
+....
+GET /user/info
+....
+
+
+===== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4,.^2"]
+|===
+|Type|Name|Description|Schema|Default
+|**Header**|**jwt** +
+__optional__|令牌|string|`"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxIiwiaWF0IjoxNTkxMDczOTE0LCJzdWIiOiJvRUFmNzRoX0R5VWh0THNseGFUZ0RTRVRnR2dVIiwiZXhwIjoxNTkxNjc4NzE0fQ.5UEkNWptscuIyq2eS0Y5K0o2ZZLQyWEYKKHcLkDt42Q"`
+|===
+
+
+===== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_resultmodel,ResultModel>>
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+===== Produces
+
+* `*/*`
+
+
+[[_loginusingget]]
+==== 登录
+....
+GET /user/login
+....
+
+
+===== Description
+只填code就是第一次登录 填了其他的将更新用户
+
+
+===== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4,.^2"]
+|===
+|Type|Name|Description|Schema|Default
+|**Header**|**jwt** +
+__optional__|令牌|string|`"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxIiwiaWF0IjoxNTkxMDczOTE0LCJzdWIiOiJvRUFmNzRoX0R5VWh0THNseGFUZ0RTRVRnR2dVIiwiZXhwIjoxNTkxNjc4NzE0fQ.5UEkNWptscuIyq2eS0Y5K0o2ZZLQyWEYKKHcLkDt42Q"`
+|**Query**|**code** +
+__optional__|code|string|
+|**Query**|**img** +
+__optional__|img|string|
+|**Query**|**sex** +
+__optional__|sex|integer (int32)|
+|**Query**|**userName** +
+__optional__|userName|string|
+|===
+
+
+===== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_resultmodel,ResultModel>>
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+===== Produces
+
+* `*/*`
+
+
+[[_orderstatususingget]]
+==== 订单状态
+....
+GET /user/orderStatus
+....
+
+
+===== Description
+type填下面的：1发布者已发布的但未被接单的、2发布者的单被接单的但未完成的、3发布者的单被接单且已完成的；4接单者已接单但未完成的、5接单者已接单且已经完成的
+
+
+===== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4,.^2"]
+|===
+|Type|Name|Description|Schema|Default
+|**Header**|**jwt** +
+__optional__|令牌|string|`"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxIiwiaWF0IjoxNTkxMDczOTE0LCJzdWIiOiJvRUFmNzRoX0R5VWh0THNseGFUZ0RTRVRnR2dVIiwiZXhwIjoxNTkxNjc4NzE0fQ.5UEkNWptscuIyq2eS0Y5K0o2ZZLQyWEYKKHcLkDt42Q"`
+|**Query**|**type** +
+__required__|type|integer (int32)|
+|===
+
+
+===== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_resultmodel,ResultModel>>
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+===== Produces
+
+* `*/*`
+
+
+[[_realnameusingget]]
+==== 实名认证
+....
+GET /user/realName
+....
+
+
+===== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4,.^2"]
+|===
+|Type|Name|Description|Schema|Default
+|**Header**|**jwt** +
+__optional__|令牌|string|`"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxIiwiaWF0IjoxNTkxMDczOTE0LCJzdWIiOiJvRUFmNzRoX0R5VWh0THNseGFUZ0RTRVRnR2dVIiwiZXhwIjoxNTkxNjc4NzE0fQ.5UEkNWptscuIyq2eS0Y5K0o2ZZLQyWEYKKHcLkDt42Q"`
+|**Query**|**code** +
+__required__|code|string|
+|**Query**|**name** +
+__required__|name|string|
+|**Query**|**phone** +
+__required__|phone|string|
+|**Query**|**sfz** +
+__required__|sfz|string|
+|**Query**|**stuid** +
+__required__|stuid|string|
+|===
+
+
+===== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_resultmodel,ResultModel>>
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+===== Produces
+
+* `*/*`
+
+
+[[_sendsmsusingget]]
+==== 发送短信
+....
+GET /user/sendSms
+....
+
+
+===== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4,.^2"]
+|===
+|Type|Name|Description|Schema|Default
+|**Header**|**jwt** +
+__optional__|令牌|string|`"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxIiwiaWF0IjoxNTkxMDczOTE0LCJzdWIiOiJvRUFmNzRoX0R5VWh0THNseGFUZ0RTRVRnR2dVIiwiZXhwIjoxNTkxNjc4NzE0fQ.5UEkNWptscuIyq2eS0Y5K0o2ZZLQyWEYKKHcLkDt42Q"`
+|**Query**|**phone** +
+__optional__|phone|string|
+|===
+
+
+===== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_resultmodel,ResultModel>>
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+===== Produces
+
+* `*/*`
+
+
+[[_testusingget]]
+==== 充值
+....
+GET /user/topUp
+....
+
+
+===== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4,.^2"]
+|===
+|Type|Name|Description|Schema|Default
+|**Header**|**jwt** +
+__optional__|令牌|string|`"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxIiwiaWF0IjoxNTkxMDczOTE0LCJzdWIiOiJvRUFmNzRoX0R5VWh0THNseGFUZ0RTRVRnR2dVIiwiZXhwIjoxNTkxNjc4NzE0fQ.5UEkNWptscuIyq2eS0Y5K0o2ZZLQyWEYKKHcLkDt42Q"`
+|**Query**|**money** +
+__required__|money|integer (int32)|
+|===
+
+
+===== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_resultmodel,ResultModel>>
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+===== Produces
+
+* `*/*`
+
+
+[[_670bcb9b61ebf817edc1a0fbf6058c51]]
+=== 订单查询
+Order Controller
+
+
+[[_newinfousingpost]]
+==== 查询所有订单
+....
+POST /order/query
+....
+
+
+===== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4,.^2"]
+|===
+|Type|Name|Description|Schema|Default
+|**Header**|**jwt** +
+__optional__|令牌|string|`"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxIiwiaWF0IjoxNTkxMDczOTE0LCJzdWIiOiJvRUFmNzRoX0R5VWh0THNseGFUZ0RTRVRnR2dVIiwiZXhwIjoxNTkxNjc4NzE0fQ.5UEkNWptscuIyq2eS0Y5K0o2ZZLQyWEYKKHcLkDt42Q"`
+|**Query**|**highToLow** +
+__optional__|是否降序|integer (int32)|
+|**Query**|**maxMoney** +
+__optional__|最大积分|number (double)|
+|**Query**|**minMoney** +
+__optional__|最小积分|number (double)|
+|**Query**|**orderBy** +
+__optional__|通过什么字段排序|string|
+|**Query**|**pageNumber** +
+__optional__|第几页|integer (int32)|
+|**Query**|**pageSize** +
+__optional__|一页几个数据|integer (int32)|
+|**Query**|**title** +
+__optional__|模糊标题|string|
+|**Query**|**type** +
+__optional__|类别|integer (int64)|
+|**Query**|**userPublish** +
+__optional__|谁发布的|integer (int64)|
+|===
+
+
+===== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_resultmodel,ResultModel>>
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+===== Consumes
+
+* `application/json`
+
+
+===== Produces
+
+* `*/*`
+
+
+[[_049bb7285efef4c27588dad30fa2ecad]]
+=== 问答社区
+Study Controller
+
+
+[[_delcommentusingdelete_1]]
+==== 删除回答
+....
+DELETE /study/answer/{answer_id}
+....
+
+
+===== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4,.^2"]
+|===
+|Type|Name|Description|Schema|Default
+|**Header**|**jwt** +
+__optional__|令牌|string|`"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxIiwiaWF0IjoxNTkxMDczOTE0LCJzdWIiOiJvRUFmNzRoX0R5VWh0THNseGFUZ0RTRVRnR2dVIiwiZXhwIjoxNTkxNjc4NzE0fQ.5UEkNWptscuIyq2eS0Y5K0o2ZZLQyWEYKKHcLkDt42Q"`
+|**Path**|**answer_id** +
+__required__|answer_id|integer (int32)|
+|===
+
+
+===== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_resultmodel,ResultModel>>
+|**204**|No Content|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|===
+
+
+===== Produces
+
+* `*/*`
+
+
+[[_addanswerusingpost]]
+==== 回答问题
+....
+POST /study/answer/{question_id}
+....
+
+
+===== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4,.^2"]
+|===
+|Type|Name|Description|Schema|Default
+|**Header**|**jwt** +
+__optional__|令牌|string|`"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxIiwiaWF0IjoxNTkxMDczOTE0LCJzdWIiOiJvRUFmNzRoX0R5VWh0THNseGFUZ0RTRVRnR2dVIiwiZXhwIjoxNTkxNjc4NzE0fQ.5UEkNWptscuIyq2eS0Y5K0o2ZZLQyWEYKKHcLkDt42Q"`
+|**Path**|**question_id** +
+__required__|question_id|integer (int32)|
+|**Query**|**content** +
+__required__|content|string|
+|**Query**|**reply** +
+__optional__|reply|integer (int32)|
+|===
+
+
+===== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_resultmodel,ResultModel>>
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+===== Consumes
+
+* `application/json`
+
+
+===== Produces
+
+* `*/*`
+
+
+[[_getbyquestionidusingget]]
+==== 获取回答
+....
+GET /study/answer/{question_id}
+....
+
+
+===== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4,.^2"]
+|===
+|Type|Name|Description|Schema|Default
+|**Header**|**jwt** +
+__optional__|令牌|string|`"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxIiwiaWF0IjoxNTkxMDczOTE0LCJzdWIiOiJvRUFmNzRoX0R5VWh0THNseGFUZ0RTRVRnR2dVIiwiZXhwIjoxNTkxNjc4NzE0fQ.5UEkNWptscuIyq2eS0Y5K0o2ZZLQyWEYKKHcLkDt42Q"`
+|**Path**|**question_id** +
+__required__|question_id|integer (int32)|
+|===
+
+
+===== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_resultmodel,ResultModel>>
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+===== Produces
+
+* `*/*`
+
+
+[[_delquestionusingdelete]]
+==== 删提问
+....
+DELETE /study/question/{question_id}
+....
+
+
+===== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4,.^2"]
+|===
+|Type|Name|Description|Schema|Default
+|**Header**|**jwt** +
+__optional__|令牌|string|`"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxIiwiaWF0IjoxNTkxMDczOTE0LCJzdWIiOiJvRUFmNzRoX0R5VWh0THNseGFUZ0RTRVRnR2dVIiwiZXhwIjoxNTkxNjc4NzE0fQ.5UEkNWptscuIyq2eS0Y5K0o2ZZLQyWEYKKHcLkDt42Q"`
+|**Path**|**question_id** +
+__required__|question_id|integer (int32)|
+|===
+
+
+===== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_resultmodel,ResultModel>>
+|**204**|No Content|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|===
+
+
+===== Produces
+
+* `*/*`
+
+
+[[_questionusingpost]]
+==== 发提问
+....
+POST /study/question/{tag_id}
+....
+
+
+===== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4,.^2"]
+|===
+|Type|Name|Description|Schema|Default
+|**Header**|**jwt** +
+__optional__|令牌|string|`"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxIiwiaWF0IjoxNTkxMDczOTE0LCJzdWIiOiJvRUFmNzRoX0R5VWh0THNseGFUZ0RTRVRnR2dVIiwiZXhwIjoxNTkxNjc4NzE0fQ.5UEkNWptscuIyq2eS0Y5K0o2ZZLQyWEYKKHcLkDt42Q"`
+|**Path**|**tag_id** +
+__optional__|标签id|integer (int32)|
+|**Query**|**content** +
+__optional__|提问内容|string|
+|===
+
+
+===== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_resultmodel,ResultModel>>
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+===== Consumes
+
+* `application/json`
+
+
+===== Produces
+
+* `*/*`
+
+
+[[_questionusingget_2]]
+==== 获取所有标签
+....
+GET /study/tag/all
+....
+
+
+===== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4,.^2"]
+|===
+|Type|Name|Description|Schema|Default
+|**Header**|**jwt** +
+__optional__|令牌|string|`"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxIiwiaWF0IjoxNTkxMDczOTE0LCJzdWIiOiJvRUFmNzRoX0R5VWh0THNseGFUZ0RTRVRnR2dVIiwiZXhwIjoxNTkxNjc4NzE0fQ.5UEkNWptscuIyq2eS0Y5K0o2ZZLQyWEYKKHcLkDt42Q"`
+|===
+
+
+===== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_resultmodel,ResultModel>>
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+===== Produces
+
+* `*/*`
+
+
+[[_questionusingget]]
+==== 获取跟内容相似的所有问题
+....
+GET /study/tag/all/like
+....
+
+
+===== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4,.^2"]
+|===
+|Type|Name|Description|Schema|Default
+|**Header**|**jwt** +
+__optional__|令牌|string|`"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxIiwiaWF0IjoxNTkxMDczOTE0LCJzdWIiOiJvRUFmNzRoX0R5VWh0THNseGFUZ0RTRVRnR2dVIiwiZXhwIjoxNTkxNjc4NzE0fQ.5UEkNWptscuIyq2eS0Y5K0o2ZZLQyWEYKKHcLkDt42Q"`
+|**Query**|**content** +
+__optional__|content|string|
+|===
+
+
+===== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_resultmodel,ResultModel>>
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+===== Produces
+
+* `*/*`
+
+
+[[_questionusingget_1]]
+==== 获取该标签下所有问题
+....
+GET /study/tag/all/{tag_id}
+....
+
+
+===== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4,.^2"]
+|===
+|Type|Name|Description|Schema|Default
+|**Header**|**jwt** +
+__optional__|令牌|string|`"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxIiwiaWF0IjoxNTkxMDczOTE0LCJzdWIiOiJvRUFmNzRoX0R5VWh0THNseGFUZ0RTRVRnR2dVIiwiZXhwIjoxNTkxNjc4NzE0fQ.5UEkNWptscuIyq2eS0Y5K0o2ZZLQyWEYKKHcLkDt42Q"`
+|**Path**|**tag_id** +
+__required__|tag_id|integer (int32)|
+|===
+
+
+===== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_resultmodel,ResultModel>>
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+===== Produces
+
+* `*/*`
+
+
+

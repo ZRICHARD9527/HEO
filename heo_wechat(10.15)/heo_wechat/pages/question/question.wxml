@@ -1,0 +1,34 @@
+<!--pages/questions/questions.wxml-->
+<view class="page_search">
+    <wux-search-bar clear maxlength="20" bind:change="onChange" bind:clear="onClear" cancelText="{{value==='' ? '取消' : '确认'}}" bind:cancel="onCancel"/>
+</view>
+    <view class="cu-bar solid-bottom">
+            <view class="action">
+                <text class="cuIcon-title text-blue"></text>问题板块
+            </view>
+    </view>
+<scroll-view scroll-y class="scrollPage">
+    <view class="page_center">
+        <view class='nav-list'>
+            <navigator open-type="navigate" hover-class='none' url="/pages/q_A_Section/{{item.name}}/{{item.name}}" class="nav-li bg-{{item.color}}" wx:for="{{elements}}" wx:key="{{id}}">
+            <view class="nav-title">{{item.title}}</view>
+            <view class="nav-name">{{item.name}}</view>
+            <text class='cuIcon-{{item.icon}}'></text>
+            </navigator>
+        </view>
+    </view>
+    <view class="page_bottem">
+        <view class="cu-bar solid-bottom">
+            <view class="action">
+                <text class="cuIcon-title text-blue"></text>热门问题
+            </view>
+        </view>
+        <view class="padding-lr" wx:for="{{list}}" wx:for-index="id">
+            <view class="task" bindtap="to_Detail" id="{{id}}">
+                <view class="text-cut" id="{{id}}" style="width:320px">{{item.content}}</view>
+            </view>
+        </view>
+    </view>
+<button class="cu-btn block bg-blue margin-tb-sm lg" bindtap="addquestion">我要提问</button>
+</scroll-view>
+

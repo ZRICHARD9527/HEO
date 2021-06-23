@@ -1,0 +1,18 @@
+<!--pages/addquestion/addquestion.wxml-->
+<view class="cu-card dynamic">
+<view class="task-title">
+    我的提问
+  </view>
+<view class="cu-form-group margin-top">
+    <view class="title">发布板块</view>
+    <picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">
+        <view class="picker">
+            {{index?picker[index]:'选择'}}
+        </view>
+    </picker>
+</view>
+<view class="cu-form-group margin-top">
+        <textarea maxlength="-1" disabled="{{modalName!=null}}" bindinput="textareaAInput" placeholder="请输入您的问题"></textarea>
+</view>
+<wux-button block type="calm" bind:click="addquestion">发布提问</wux-button>
+</view>
